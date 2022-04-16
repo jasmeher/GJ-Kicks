@@ -1,0 +1,112 @@
+@media screen and (max-width: 1024px) {
+  .box-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    z-index: 33;
+  }
+  .info-product {
+    margin-top: 7rem;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 1rem;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+  .company-name {
+    width: 100%;
+    font-size: 3rem;
+  }
+  .company-name-container {
+    width: 25rem;
+  }
+  .product-name {
+    width: 100%;
+    font-size: 2.25rem;
+    text-align: center;
+  }
+  .product-name-container {
+    width: 25rem;
+  }
+
+  .product-price {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .cta-bttn-container {
+    width: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 675px) {
+  .box-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    z-index: 33;
+  }
+  .logo-container {
+    display: none;
+  }
+  .info-product {
+    margin-top: 7rem;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 1rem;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .company-name {
+    width: 100%;
+    font-size: 2.2rem;
+  }
+  .company-name-container {
+    width: 25rem;
+  }
+  .product-name {
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+  }
+  .product-name-container {
+    width: 25rem;
+  }
+
+  .shoes-container {
+    margin-top: 0;
+  }
+
+  .product-price {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .cta-bttn-container {
+    width: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cta-bttn {
+    font-size: 1.4rem;
+    padding: 1rem 1rem;
+  }
+
+  .company-name-container,
+  .product-name-container,
+  .real-price-container,
+  .discounted-price-container,
+  .cta-bttn-container {
+    overflow: visible;
+    text-align: center;
+  }
+}
