@@ -47,6 +47,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/media.css" />
+    <link rel="stylesheet" href="css/style-mobile.css" />
   </head>
   <body onload="randomTip()">
     <div class="logo-wrapper">
@@ -62,7 +63,7 @@
           data-bs-target="#offcanvasBottom"
           aria-controls="offcanvasBottom"
         >
-          <span class="material-icons-outlined">menu</span>
+          <span class="material-icons-outlined icon">menu</span>
         </button>
 
         <div
@@ -85,11 +86,24 @@
           <div class="offcanvas-body small">...</div>
         </div>
 
-        <p class="logo"><a href="index.html">Logo</a></p>
+        <div class="logo-company">
+          <a href="index.html">
+            <img
+              src="Images/logo-outline.png"
+              alt=""
+              class="img-fluid outline-logo"
+            />
+            <img
+              src="Images/logo-color.png"
+              alt=""
+              class="img-fluid color-logo"
+            />
+          </a>
+        </div>
 
         <span class="material-icons-outlined">shopping_cart</span>
       </nav>
-      <main>
+      <main class="desktop">
         <header class="container-fluid landing-section">
           <div class="ball" id="ball"></div>
           <div class="ball2" id="ball"></div>
@@ -156,7 +170,7 @@
                   exercitationem tempora? Vitae.
                 </p>
 
-                <button class="cta-promo">
+                <button class="cta-promo" id="about-section-cta">
                   <a href="#" class="text-reset">SHOP NOW</a>
                 </button>
               </div>

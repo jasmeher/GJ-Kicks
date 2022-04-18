@@ -1,4 +1,4 @@
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1025px) {
   .box-wrapper {
     width: 100%;
     min-height: 100vh;
@@ -42,71 +42,99 @@
     justify-content: center;
     align-items: center;
   }
+
+  .shoes-container {
+    margin-top: 2rem;
+    width: 60rem;
+    margin-bottom: 0;
+  }
+
+  .info-product {
+    margin: 0;
+  }
 }
 
-@media screen and (max-width: 675px) {
-  .box-wrapper {
-    width: 100%;
-    min-height: 100vh;
-    z-index: 33;
+@media screen and (min-width: 675px) {
+  .desktop {
+    display: block;
   }
-  .logo-container {
-    display: none;
+}
+
+@media screen and (max-width: 1025px) {
+}
+
+@media screen and (max-width: 769px) {
+  .shoes-container {
+    width: 50rem;
+    margin: 0;
   }
+
   .info-product {
-    margin-top: 7rem;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    flex-direction: column;
-    width: 100%;
-    margin-bottom: 1rem;
-    justify-content: space-evenly;
-    align-items: center;
+    margin: 0;
   }
-  .company-name {
-    width: 100%;
-    font-size: 2.2rem;
-  }
-  .company-name-container {
-    width: 25rem;
-  }
-  .product-name {
-    width: 100%;
-    font-size: 2rem;
+
+  .text-promo {
     text-align: center;
   }
-  .product-name-container {
-    width: 25rem;
+
+  .text-promo h1 {
+    width: 100%;
+  }
+
+  .para-promo,
+  #promo-para-2 {
+    margin-inline: auto;
+  }
+
+  #about-section-cta {
+    margin-bottom: 2rem;
+  }
+
+  #promo-part-2 {
+    display: none;
+  }
+
+  .promo-text-container {
+    width: 70rem;
+    text-align: center;
+    height: 25rem;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .logo-container {
+    display: none !important;
   }
 
   .shoes-container {
-    margin-top: 0;
+    position: absolute;
+    width: 40rem;
+    top: 15%;
   }
-
-  .product-price {
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: space-around;
-  }
-  .cta-bttn-container {
-    width: 20rem;
-    display: flex;
+  .info-product {
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0;
+    height: 30rem;
+    margin-top: -7rem;
   }
-
-  .cta-bttn {
-    font-size: 1.4rem;
-    padding: 1rem 1rem;
-  }
-
-  .company-name-container,
-  .product-name-container,
-  .real-price-container,
-  .discounted-price-container,
-  .cta-bttn-container {
-    overflow: visible;
+  .company-name-container {
     text-align: center;
+  }
+
+  .ball-5 {
+    display: none !important;
+  }
+
+  .promo-text-container {
+    width: 35rem;
+    top: 40%;
+  }
+}
+
+@media screen and (max-width: 321px) {
+  .shoes-container {
+    width: 32rem;
   }
 }

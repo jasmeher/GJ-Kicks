@@ -10,6 +10,7 @@ var i = 0;
 var storeShoeColor;
 var intervalId;
 var running = false;
+var w = window.innerWidth;
 
 const shoesNike = [
   "Images/shoes-nike.png",
@@ -100,7 +101,7 @@ const tips = [
   "TIP: Best viewed on Desktop",
   "FACT: All the photos used here are copyrighted to the respective copyright holders. THEY ARE NOT MINE",
   "FACT: The logo is made by my bro!",
-  "FACT: I am available for freelancing!",
+  "FACT: I am available for Hiring!",
   "FACT: My mother supports me a lot in the stuff I do!",
 ];
 
@@ -369,8 +370,8 @@ let timeline = new TimelineMax();
 timeline
   .to(".logo-container", 3, { y: -90 })
   .to(".shoes-container", 3, { y: -100 }, "-=3")
-  .to(".navbar-cs", 3, { opacity: 0.7 })
-  // .to(".info-product", 3, { y: -120 }, "-=3")
+  .to(".navbar-cs", 3, { opacity: 0.9 })
+  .to(".info-product", 3, { y: -120 }, "-=3")
   .to("#about", 3, { top: 0, duration: 4, delay: 2 }, "-=3")
   .fromTo(".promo-part-2", { height: 0 }, { height: "100vh", duration: 3.5 })
   .fromTo(".logo-promo", { x: 500 }, { x: 0, duration: 3.5 })
@@ -385,7 +386,7 @@ timeline
     { opacity: 0 },
     { opacity: 1, duration: 2, delay: 1 }
   )
-  .fromTo(".cta-promo", { x: -200 }, { x: 0, duration: 4 })
+  .fromTo(".cta-promo", { x: -500 }, { x: 0, duration: 4 })
   .to("#custom-shoes", 3, { top: 0, duration: 5, delay: 5 })
   .call(stopCustomShoes)
   .call(customShoes)
@@ -402,6 +403,7 @@ timeline
     { backgroundColor: "#1c1c1c", opacity: 1, duration: 5, delay: 3 },
     "-=5"
   )
+  .to(".outline-logo", 3, { filter: "invert(1)", duration: 5, delay: 3 }, "-=5")
   .from(".cta", 3, { y: 900, duration: 3 })
   .fromTo(
     ".overlay",
@@ -415,6 +417,7 @@ timeline
     { backgroundColor: "#121416", opacity: 1, duration: 5, delay: 3 },
     "-=5"
   )
+
   .from(".promo-text-container", { y: 700, duration: 4 })
   .to(".promo-text-h2", { opacity: 1, duration: 4, fontSize: "6rem" })
   .to(".promo-text-h2", { opacity: 0.5, duration: 2, fontSize: "5rem" })
@@ -437,6 +440,12 @@ timeline
       duration: 4,
     },
     "-=3"
+  )
+  .to(
+    ".outline-logo",
+    3,
+    { filter: "invert(0)", duration: 5, delay: 3 },
+    "-=5"
   );
 
 let scene = new ScrollMagic.Scene({

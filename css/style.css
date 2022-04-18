@@ -52,13 +52,18 @@ a {
   text-decoration: none;
 }
 
+.mobile {
+  display: none;
+}
+
 .landing-section,
 #about,
 #custom-shoes,
 #cta-section,
 #product-list,
-#ball {
-  margin-top: 7vh;
+#ball,
+.mobile {
+  margin-top: 8vh;
 }
 
 .loader-wrapper {
@@ -138,7 +143,7 @@ a {
 .tip {
   position: absolute;
   z-index: 20;
-  top: 60%;
+  top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -146,7 +151,7 @@ a {
 
 .navbar-cs {
   width: 100%;
-  height: 7vh;
+  height: 8vh;
   background-color: #bebebe;
   display: flex;
   justify-content: space-between;
@@ -156,6 +161,29 @@ a {
   top: 0;
   z-index: 22;
   opacity: 1;
+}
+
+.logo-company {
+  width: 10rem;
+  position: relative;
+}
+
+.outline-logo {
+  position: absolute;
+}
+
+.bttn-nav {
+  background: transparent;
+  border: 0;
+}
+
+.icon {
+  font-size: 2.5rem;
+  transition: 200ms ease;
+}
+
+.icon:hover {
+  font-size: 2.7rem;
 }
 
 .container-fluid {
