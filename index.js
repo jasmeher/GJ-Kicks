@@ -8,6 +8,8 @@ var selectedLogo;
 var arrayLength;
 var i = 0;
 var storeShoeColor;
+var intervalId;
+var running = false;
 
 const shoesNike = [
   "Images/shoes-nike.png",
@@ -85,7 +87,54 @@ const logoPromo = [
   "Images/nike-logo.png",
 ];
 
+const customShoesArray = [
+  "Images/nike-jordan-1-custom-blank.png",
+  "Images/nike-jordan-1-custom-gta-sa.png",
+  "Images/nike-jordan-1-custom-gta-vc.png",
+  "Images/nike-jordan-1-custom-gta-vc-2.png",
+  "Images/nike-jordan-1-custom-gta-vc-3.png",
+  "Images/vans-custom-shoe.png",
+];
+
+const tips = [
+  "TIP: Best viewed on Desktop",
+  "FACT: All the photos used here are copyrighted to the respective copyright holders. THEY ARE NOT MINE",
+  "FACT: The logo is made by my bro!",
+  "FACT: I am available for freelancing!",
+  "FACT: My mother supports me a lot in the stuff I do!",
+];
+
 // FUNCTIONS
+
+function customShoes() {
+  if (running != true) {
+    intervalId = setInterval(() => {
+      randomNum = Math.floor(Math.random() * customShoesArray.length);
+      document.getElementById("custom-shoe-showcase").src =
+        customShoesArray[randomNum];
+      console.log("Executed");
+    }, 200);
+  }
+  running = true;
+}
+
+function randomTip() {
+  randomNum = Math.floor(Math.random() * tips.length);
+  document.getElementById("tips").innerHTML = tips[randomNum];
+}
+
+function stopCustomShoes() {
+  if (running == false) {
+    customShoes();
+    return;
+  }
+  if (running == true) {
+    running = false;
+    clearInterval(intervalId);
+    console.log("Stopped");
+    return;
+  }
+}
 
 function randomPromo() {
   randomNum = Math.floor(Math.random() * promoShoes.length);
@@ -154,7 +203,6 @@ function shoesShowcase() {
     (function (i) {
       setTimeout(function () {
         document.getElementById("shoes").src = selectedShoes[i];
-        console.log(selectedShoes[i]);
       }, 250 * (i + 1));
     })(i);
   }
@@ -165,7 +213,6 @@ function Logos() {
     (function (i) {
       setTimeout(function () {
         document.getElementById("company-logo").src = selectedLogo[i];
-        console.log(selectedShoes[i]);
       }, 250 * (i + 1));
     })(i);
   }
@@ -285,6 +332,7 @@ Pace.on("done", function () {
     .addClass("animate-circle") // adding a animation class to loader wrapper
     .css("clip-path", "circle(100%)"); //changing the clip-path to "circle(100%)"
   $(".logo-wrapper").css("border", "0").fadeOut(500); //Fade out of the logo
+  $(".tip").fadeOut(500);
 
   companySelector();
   shoesListSelector();
@@ -302,12 +350,17 @@ Pace.on("done", function () {
     .from("#discounted-price", { duration: 0.5, y: 100 }, "-=0.3")
     .from(".cta-bttn", { duration: 0.5, y: 100 }, "-=0.1")
     .to("#ball", 1, { y: 10, ease: Linear }, "-=4")
-    .to("#ball", 1, {
-      y: -10,
-      ease: Linear,
-      repeat: -1,
-      yoyo: true,
-    });
+    .to(
+      "#ball",
+      1,
+      {
+        y: -10,
+        ease: Linear,
+        repeat: -1,
+        yoyo: true,
+      },
+      "-=4"
+    );
 });
 
 let controller = new ScrollMagic.Controller();
@@ -316,8 +369,9 @@ let timeline = new TimelineMax();
 timeline
   .to(".logo-container", 3, { y: -90 })
   .to(".shoes-container", 3, { y: -100 }, "-=3")
+  .to(".navbar-cs", 3, { opacity: 0.7 })
   // .to(".info-product", 3, { y: -120 }, "-=3")
-  .to("#about", 3, { top: 0, delay: 2 }, "-=3")
+  .to("#about", 3, { top: 0, duration: 4, delay: 2 }, "-=3")
   .fromTo(".promo-part-2", { height: 0 }, { height: "100vh", duration: 3.5 })
   .fromTo(".logo-promo", { x: 500 }, { x: 0, duration: 3.5 })
   .fromTo(".text-promo", { x: -700 }, { x: 0, duration: 3 })
@@ -331,19 +385,35 @@ timeline
     { opacity: 0 },
     { opacity: 1, duration: 2, delay: 1 }
   )
-  .fromTo(".cta-promo", { x: -200 }, { x: 0, duration: 2, delay: 1.2 })
+  .fromTo(".cta-promo", { x: -200 }, { x: 0, duration: 4 })
+  .to("#custom-shoes", 3, { top: 0, duration: 5, delay: 5 })
+  .call(stopCustomShoes)
+  .call(customShoes)
   .to("#cta-section", 3, { top: 0, delay: 10 })
+  .call(stopCustomShoes)
   .to("#cta-section", 3, {
     backgroundColor: "#1c1c1c",
     duration: 5,
     delay: 0.7,
   })
+  .to(
+    ".navbar-cs",
+    3,
+    { backgroundColor: "#1c1c1c", opacity: 1, duration: 5, delay: 3 },
+    "-=5"
+  )
   .from(".cta", 3, { y: 900, duration: 3 })
   .fromTo(
     ".overlay",
     3,
     { opacity: 0 },
     { opacity: 0.8, delay: 3, duration: 3 }
+  )
+  .to(
+    ".navbar-cs",
+    3,
+    { backgroundColor: "#121416", opacity: 1, duration: 5, delay: 3 },
+    "-=5"
   )
   .from(".promo-text-container", { y: 700, duration: 4 })
   .to(".promo-text-h2", { opacity: 1, duration: 4, fontSize: "6rem" })
@@ -355,11 +425,23 @@ timeline
     fontSize: "6rem",
   })
   .to(".promo-text-h2-2", { opacity: 0.5, duration: 2, fontSize: "5rem" })
-  .to("#product-list", { top: 0, duration: 4, delay: 7 });
+
+  .to("#product-list", { top: 0, duration: 4, delay: 7 })
+  .to(
+    ".navbar-cs",
+    3,
+    {
+      opacity: 1,
+      backgroundColor: "#bebebe",
+      delay: 7,
+      duration: 4,
+    },
+    "-=3"
+  );
 
 let scene = new ScrollMagic.Scene({
   triggerElement: "main",
-  duration: "350%",
+  duration: "400%",
   triggerHook: 0,
 })
   .setTween(timeline)

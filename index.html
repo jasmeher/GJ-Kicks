@@ -48,12 +48,47 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/media.css" />
   </head>
-  <body>
+  <body onload="randomTip()">
+    <div class="logo-wrapper">
+      <img src="Images/shoe-logo.png" alt="" class="img-fluid logo-load" />
+    </div>
+    <p class="tip" id="tips">Tip: Best viewed on Desktop.</p>
     <div class="loader-wrapper">
-      <div class="logo-wrapper">
-        <img src="Images/shoe-logo.png" alt="" class="img-fluid logo-load" />
-      </div>
+      <nav class="navbar-cs">
+        <button
+          class="bttn-nav"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasBottom"
+          aria-controls="offcanvasBottom"
+        >
+          <span class="material-icons-outlined">menu</span>
+        </button>
 
+        <div
+          class="offcanvas offcanvas-start"
+          tabindex="-1"
+          id="offcanvasBottom"
+          aria-labelledby="offcanvasBottomLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasBottomLabel">
+              Offcanvas bottom
+            </h5>
+            <button
+              type="button"
+              class="btn-close text-reset"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body small">...</div>
+        </div>
+
+        <p class="logo"><a href="index.html">Logo</a></p>
+
+        <span class="material-icons-outlined">shopping_cart</span>
+      </nav>
       <main>
         <header class="container-fluid landing-section">
           <div class="ball" id="ball"></div>
@@ -139,6 +174,43 @@
           </div>
         </section>
 
+        <section id="custom-shoes">
+          <div class="row">
+            <div class="col-12 custom-shoes-heading">
+              <h1>GET THE STYLE WHICH SUITS YOU</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
+                accusamus illum officiis autem, illo vero.
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 custom-shoe-img-container">
+              <div class="custom-shoe-img">
+                <img
+                  src="Images/nike-jordan-1-custom-blank.png"
+                  alt=""
+                  class="img-fluid"
+                  id="custom-shoe-showcase"
+                />
+              </div>
+              <button
+                class="add-to-cart-bttn"
+                style="font-size: 1.8rem"
+                onmouseenter="stopCustomShoes()"
+                onmouseleave="customShoes()"
+              >
+                <a
+                  href="https://www.nike.com/in/"
+                  class="text-reset"
+                  target="_blank"
+                  >VIEW MORE</a
+                >
+              </button>
+            </div>
+          </div>
+        </section>
+
         <section id="cta-section">
           <img src="Images/cta (1).jpg" alt="" id="cta-1" class="cta" />
           <img src="Images/cta (2).jpg" alt="" id="cta-2" class="cta" />
@@ -165,6 +237,484 @@
         </section>
 
         <section id="product-list">
+          <div class="row">
+            <div class="col-12 company-name-row">
+              NIKE
+              <button class="add-to-cart-bttn" style="font-size: 1.2rem">
+                <a
+                  href="https://www.nike.com/in/"
+                  class="text-reset"
+                  target="_blank"
+                  >VIEW MORE</a
+                >
+              </button>
+            </div>
+          </div>
+          <div class="row mb-5">
+            <div class="col-12 col-nike py-4">
+              <div class="item-card">
+                <div class="item-img-container">
+                  <img
+                    src="Images/shoes-nike.png"
+                    alt=""
+                    class="img-fluid"
+                    id="product-shoe"
+                  />
+                </div>
+                <div class="item-name-container">Jordan .5'Why Not?'</div>
+                <div class="colors-shoes">
+                  <div
+                    class="color-shoe-container"
+                    onmouseleave="defaultColor('product-shoe')"
+                  >
+                    <img
+                      src="Images/shoes-nike.png"
+                      alt=""
+                      class="img-fluid"
+                      id="shoe-colored"
+                      onmouseenter="changeShoeColor(this, 'product-shoe')"
+                    />
+                  </div>
+                  <div
+                    class="color-shoe-container"
+                    onmouseleave="defaultColor('product-shoe')"
+                  >
+                    <img
+                      src="Images/shoes-nike-colored.png"
+                      alt=""
+                      class="img-fluid"
+                      id="shoe-colored-2"
+                      onmouseenter="changeShoeColor(this, 'product-shoe')"
+                    />
+                  </div>
+                </div>
+                <div class="colors-number">2 Colours</div>
+                <div class="price-container">
+                  <p class="real-price-item">$150.59</p>
+                  <p class="discounted-price-item">$124.99</p>
+                </div>
+                <button class="add-to-cart-bttn">ADD TO CART</button>
+              </div>
+
+              <div class="item-card">
+                <div class="item-img-container">
+                  <img
+                    src="Images/shoes-nike-4.png"
+                    alt=""
+                    class="img-fluid"
+                    id="product-shoe-2"
+                  />
+                </div>
+                <div class="item-name-container">Air Jordan 7 Retro SE</div>
+                <div class="colors-shoes">
+                  <div
+                    class="color-shoe-container"
+                    onmouseleave="defaultColor('product-shoe-2')"
+                  >
+                    <img
+                      src="Images/shoes-nike-4.png"
+                      alt=""
+                      class="img-fluid"
+                      id="shoe-colored-3"
+                      onmouseenter="changeShoeColor(this, 'product-shoe-2')"
+                    />
+                  </div>
+                </div>
+                <div class="colors-number">1 Colour</div>
+                <div class="price-container">
+                  <p class="real-price-item">$266.54</p>
+                  <p class="discounted-price-item">$200.00</p>
+                </div>
+                <button class="add-to-cart-bttn">ADD TO CART</button>
+              </div>
+
+              <div class="item-card">
+                <div class="item-img-container">
+                  <img
+                    src="Images/shoes-nike-2.png"
+                    alt=""
+                    class="img-fluid"
+                    id="product-shoe-3"
+                  />
+                </div>
+                <div class="item-name-container">KD 14 By You</div>
+                <div class="colors-shoes">
+                  <div
+                    class="color-shoe-container"
+                    onmouseleave="defaultColor('product-shoe-3')"
+                  >
+                    <img
+                      src="Images/shoes-nike-2-colored-1.png"
+                      alt=""
+                      class="img-fluid"
+                      id="shoe-colored-4"
+                      onmouseenter="changeShoeColor(this, 'product-shoe-3')"
+                    />
+                  </div>
+                  <div
+                    class="color-shoe-container"
+                    onmouseleave="defaultColor('product-shoe-3')"
+                  >
+                    <img
+                      src="Images/shoes-nike-2-colored-2.png"
+                      alt=""
+                      class="img-fluid"
+                      id="shoe-colored-5"
+                      onmouseenter="changeShoeColor(this, 'product-shoe-3')"
+                    />
+                  </div>
+                  <div
+                    class="color-shoe-container"
+                    onmouseleave="defaultColor('product-shoe-3')"
+                  >
+                    <img
+                      src="Images/shoes-nike-2-colored-3.png"
+                      alt=""
+                      class="img-fluid"
+                      id="shoe-colored-6"
+                      onmouseenter="changeShoeColor(this, 'product-shoe-3')"
+                    />
+                  </div>
+                </div>
+                <div class="colors-number">Custom Shoes</div>
+                <div class="price-container">
+                  <p class="real-price-item">$239.31</p>
+                  <p class="discounted-price-item">$200.00</p>
+                </div>
+                <button class="add-to-cart-bttn">ADD TO CART</button>
+              </div>
+
+              <div class="item-card">
+                <div class="item-img-container">
+                  <img
+                    src="Images/shoes-nike-3.png"
+                    alt=""
+                    class="img-fluid"
+                    id="product-shoe-4"
+                  />
+                </div>
+                <div class="item-name-container">
+                  Nike Mercurial Vapor 14 Elite FG
+                </div>
+                <div class="colors-shoes">
+                  <div
+                    class="color-shoe-container"
+                    onmouseleave="defaultColor('product-shoe-4')"
+                  >
+                    <img
+                      src="Images/shoes-nike-3.png"
+                      alt=""
+                      class="img-fluid"
+                      id="shoe-colored-7"
+                      onmouseenter="changeShoeColor(this, 'product-shoe-4')"
+                    />
+                  </div>
+                  <div
+                    class="color-shoe-container"
+                    onmouseleave="defaultColor('product-shoe-4')"
+                  >
+                    <img
+                      src="Images/shoes-nike-3-colored-1.png"
+                      alt=""
+                      class="img-fluid"
+                      id="shoe-colored-8"
+                      onmouseenter="changeShoeColor(this, 'product-shoe-4')"
+                    />
+                  </div>
+                  <div
+                    class="color-shoe-container"
+                    onmouseleave="defaultColor('product-shoe-4')"
+                  >
+                    <img
+                      src="Images/shoes-nike-3-colored-2.png"
+                      alt=""
+                      class="img-fluid"
+                      id="shoe-colored-9"
+                      onmouseenter="changeShoeColor(this, 'product-shoe-4')"
+                    />
+                  </div>
+                </div>
+                <div class="colors-number">3 Colours</div>
+                <div class="price-container">
+                  <p class="real-price-item">$326.44</p>
+                  <p class="discounted-price-item">$300.00</p>
+                </div>
+                <button class="add-to-cart-bttn">ADD TO CART</button>
+              </div>
+
+              <div class="item-card">
+                <div class="item-img-container">
+                  <img
+                    src="Images/shoes-nike-5.png"
+                    alt=""
+                    class="img-fluid"
+                    id="product-shoe-5"
+                  />
+                </div>
+                <div class="item-name-container">Nike ZoomX Streakfly</div>
+                <div class="colors-shoes">
+                  <div
+                    class="color-shoe-container"
+                    onmouseleave="defaultColor('product-shoe-4')"
+                  >
+                    <img
+                      src="Images/shoes-nike-5.png"
+                      alt=""
+                      class="img-fluid"
+                      id="shoe-colored-10"
+                      onmouseenter="changeShoeColor(this, 'product-shoe-5')"
+                    />
+                  </div>
+                </div>
+                <div class="colors-number">1 Colour</div>
+                <div class="price-container">
+                  <p class="real-price-item">$198.48</p>
+                  <p class="discounted-price-item">$149.99</p>
+                </div>
+                <button class="add-to-cart-bttn">ADD TO CART</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12 company-name-row">
+              ADIDAS
+              <button class="add-to-cart-bttn" style="font-size: 1.2rem">
+                <a
+                  href="https://www.nike.com/in/"
+                  class="text-reset"
+                  target="_blank"
+                  >VIEW MORE</a
+                >
+              </button>
+            </div>
+          </div>
+          <div class="row mb-5">
+            <div class="col-12 col-nike py-4">
+              <div class="item-card">
+                <div class="item-img-container">
+                  <img
+                    src="Images/shoes-nike.png"
+                    alt=""
+                    class="img-fluid"
+                    id="product-shoe"
+                  />
+                </div>
+                <div class="item-name-container">Jordan .5'Why Not?'</div>
+                <div class="colors-shoes">
+                  <div
+                    class="color-shoe-container"
+                    onmouseleave="defaultColor('product-shoe')"
+                  >
+                    <img
+                      src="Images/shoes-nike.png"
+                      alt=""
+                      class="img-fluid"
+                      id="shoe-colored"
+                      onmouseenter="changeShoeColor(this, 'product-shoe')"
+                    />
+                  </div>
+                  <div
+                    class="color-shoe-container"
+                    onmouseleave="defaultColor('product-shoe')"
+                  >
+                    <img
+                      src="Images/shoes-nike-colored.png"
+                      alt=""
+                      class="img-fluid"
+                      id="shoe-colored-2"
+                      onmouseenter="changeShoeColor(this, 'product-shoe')"
+                    />
+                  </div>
+                </div>
+                <div class="colors-number">2 Colours</div>
+                <div class="price-container">
+                  <p class="real-price-item">$150.59</p>
+                  <p class="discounted-price-item">$124.99</p>
+                </div>
+                <button class="add-to-cart-bttn">ADD TO CART</button>
+              </div>
+
+              <div class="item-card">
+                <div class="item-img-container">
+                  <img
+                    src="Images/shoes-nike-4.png"
+                    alt=""
+                    class="img-fluid"
+                    id="product-shoe-2"
+                  />
+                </div>
+                <div class="item-name-container">Air Jordan 7 Retro SE</div>
+                <div class="colors-shoes">
+                  <div
+                    class="color-shoe-container"
+                    onmouseleave="defaultColor('product-shoe-2')"
+                  >
+                    <img
+                      src="Images/shoes-nike-4.png"
+                      alt=""
+                      class="img-fluid"
+                      id="shoe-colored-3"
+                      onmouseenter="changeShoeColor(this, 'product-shoe-2')"
+                    />
+                  </div>
+                </div>
+                <div class="colors-number">1 Colour</div>
+                <div class="price-container">
+                  <p class="real-price-item">$266.54</p>
+                  <p class="discounted-price-item">$200.00</p>
+                </div>
+                <button class="add-to-cart-bttn">ADD TO CART</button>
+              </div>
+
+              <div class="item-card">
+                <div class="item-img-container">
+                  <img
+                    src="Images/shoes-nike-2.png"
+                    alt=""
+                    class="img-fluid"
+                    id="product-shoe-3"
+                  />
+                </div>
+                <div class="item-name-container">KD 14 By You</div>
+                <div class="colors-shoes">
+                  <div
+                    class="color-shoe-container"
+                    onmouseleave="defaultColor('product-shoe-3')"
+                  >
+                    <img
+                      src="Images/shoes-nike-2-colored-1.png"
+                      alt=""
+                      class="img-fluid"
+                      id="shoe-colored-4"
+                      onmouseenter="changeShoeColor(this, 'product-shoe-3')"
+                    />
+                  </div>
+                  <div
+                    class="color-shoe-container"
+                    onmouseleave="defaultColor('product-shoe-3')"
+                  >
+                    <img
+                      src="Images/shoes-nike-2-colored-2.png"
+                      alt=""
+                      class="img-fluid"
+                      id="shoe-colored-5"
+                      onmouseenter="changeShoeColor(this, 'product-shoe-3')"
+                    />
+                  </div>
+                  <div
+                    class="color-shoe-container"
+                    onmouseleave="defaultColor('product-shoe-3')"
+                  >
+                    <img
+                      src="Images/shoes-nike-2-colored-3.png"
+                      alt=""
+                      class="img-fluid"
+                      id="shoe-colored-6"
+                      onmouseenter="changeShoeColor(this, 'product-shoe-3')"
+                    />
+                  </div>
+                </div>
+                <div class="colors-number">Custom Shoes</div>
+                <div class="price-container">
+                  <p class="real-price-item">$239.31</p>
+                  <p class="discounted-price-item">$200.00</p>
+                </div>
+                <button class="add-to-cart-bttn">ADD TO CART</button>
+              </div>
+
+              <div class="item-card">
+                <div class="item-img-container">
+                  <img
+                    src="Images/shoes-nike-3.png"
+                    alt=""
+                    class="img-fluid"
+                    id="product-shoe-4"
+                  />
+                </div>
+                <div class="item-name-container">
+                  Nike Mercurial Vapor 14 Elite FG
+                </div>
+                <div class="colors-shoes">
+                  <div
+                    class="color-shoe-container"
+                    onmouseleave="defaultColor('product-shoe-4')"
+                  >
+                    <img
+                      src="Images/shoes-nike-3.png"
+                      alt=""
+                      class="img-fluid"
+                      id="shoe-colored-7"
+                      onmouseenter="changeShoeColor(this, 'product-shoe-4')"
+                    />
+                  </div>
+                  <div
+                    class="color-shoe-container"
+                    onmouseleave="defaultColor('product-shoe-4')"
+                  >
+                    <img
+                      src="Images/shoes-nike-3-colored-1.png"
+                      alt=""
+                      class="img-fluid"
+                      id="shoe-colored-8"
+                      onmouseenter="changeShoeColor(this, 'product-shoe-4')"
+                    />
+                  </div>
+                  <div
+                    class="color-shoe-container"
+                    onmouseleave="defaultColor('product-shoe-4')"
+                  >
+                    <img
+                      src="Images/shoes-nike-3-colored-2.png"
+                      alt=""
+                      class="img-fluid"
+                      id="shoe-colored-9"
+                      onmouseenter="changeShoeColor(this, 'product-shoe-4')"
+                    />
+                  </div>
+                </div>
+                <div class="colors-number">3 Colours</div>
+                <div class="price-container">
+                  <p class="real-price-item">$326.44</p>
+                  <p class="discounted-price-item">$300.00</p>
+                </div>
+                <button class="add-to-cart-bttn">ADD TO CART</button>
+              </div>
+
+              <div class="item-card">
+                <div class="item-img-container">
+                  <img
+                    src="Images/shoes-nike-5.png"
+                    alt=""
+                    class="img-fluid"
+                    id="product-shoe-5"
+                  />
+                </div>
+                <div class="item-name-container">Nike ZoomX Streakfly</div>
+                <div class="colors-shoes">
+                  <div
+                    class="color-shoe-container"
+                    onmouseleave="defaultColor('product-shoe-4')"
+                  >
+                    <img
+                      src="Images/shoes-nike-5.png"
+                      alt=""
+                      class="img-fluid"
+                      id="shoe-colored-10"
+                      onmouseenter="changeShoeColor(this, 'product-shoe-5')"
+                    />
+                  </div>
+                </div>
+                <div class="colors-number">1 Colour</div>
+                <div class="price-container">
+                  <p class="real-price-item">$198.48</p>
+                  <p class="discounted-price-item">$149.99</p>
+                </div>
+                <button class="add-to-cart-bttn">ADD TO CART</button>
+              </div>
+            </div>
+          </div>
+
           <div class="row">
             <div class="col-12 company-name-row">
               NIKE
