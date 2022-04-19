@@ -137,4 +137,7 @@
   .shoes-container {
     width: 32rem;
   }
+  #promo-para-2 {
+    display: none;
+  }
 }

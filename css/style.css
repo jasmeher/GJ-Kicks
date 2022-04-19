@@ -52,17 +52,26 @@ a {
   text-decoration: none;
 }
 
-.mobile {
-  display: none;
+::-webkit-scrollbar {
+  width: 0.8rem;
+  background-color: #818181;
+  box-shadow: inset 0px 0px 6px #818181;
 }
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--accent);
+}
+
+/* ::-webkit-scrollbar-button {
+  background: #121212;
+} */
 
 .landing-section,
 #about,
 #custom-shoes,
 #cta-section,
 #product-list,
-#ball,
-.mobile {
+#ball {
   margin-top: 8vh;
 }
 
@@ -184,6 +193,67 @@ a {
 
 .icon:hover {
   font-size: 2.7rem;
+}
+
+.offcanvas-navbar-cs {
+  background-color: var(--primary);
+  border: 0;
+}
+
+.nav-logo-container {
+  width: 10rem;
+}
+
+.offcanvas-header {
+  border-bottom: 1px solid #a3a3a3;
+}
+
+.navbar-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav-item {
+  font-size: 1.8rem;
+  font-family: "Gilroy-Bold";
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.nav-link {
+  padding: 1rem;
+  position: relative;
+  width: fit-content;
+}
+
+.nav-link::before {
+  content: " ";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background-color: var(--secondary);
+  bottom: 5px;
+  left: 0;
+  transition: 200ms ease;
+}
+
+.nav-link::after {
+  font-family: "Material Icons";
+  content: "east";
+  -webkit-font-feature-settings: "liga";
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  transition: 200ms ease;
+}
+
+.nav-link:hover::before {
+  width: 100%;
+}
+
+.nav-link:hover::after {
+  left: 105%;
+  opacity: 1;
 }
 
 .container-fluid {
