@@ -102,7 +102,6 @@ const tips = [
   "FACT: All the photos used here are copyrighted to the respective copyright holders. THEY ARE NOT MINE",
   "FACT: The logo is made by my bro!",
   "FACT: I am available for Hiring!",
-  "FACT: My mother supports me a lot in the stuff I do!",
 ];
 
 // FUNCTIONS
